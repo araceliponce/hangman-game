@@ -1,0 +1,227 @@
+:root{
+  --ancho-max: 90%;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 18px;
+
+  margin: 0;
+  padding: 0;
+  font-family:'Annie Use Your Telescope', cursive;
+  font-weight: bold;
+}
+
+
+/* ANIMACIONES */
+@keyframes zoomInOut {
+  /* tamaño al minimo  */
+  0% { transform: scale(0); }
+  /* tamaño normal */
+  50% { transform: scale(1); }
+  /* tamaño normal */
+  70% { transform: scale(1); }
+  /* tamaño al minimo */
+  100% { transform: scale(0); }
+}
+
+body{
+  background-color: beige;
+}
+
+main{
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  height: 100vh;
+
+  padding: 0 1rem; 
+
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* screens de 700px a más */
+@media screen and (min-width: 700px){
+  *{
+    font-size: 20px;
+  }
+}
+
+
+button{
+  background-color: gainsboro;
+  padding: .3rem;
+  border: 1px solid black;
+  margin: 2rem .5rem;
+}
+
+
+/* ENCABEZADO (TITULO E INTENTOS) */
+.cabecera{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo {
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+#intentos {
+  color: orangered;
+}
+
+
+/* MENSAJES */
+#msg-final {
+  font-size: 2rem;
+  font-weight: bold;
+  color: crimson;
+  transition: all .3s ease;
+  transform: scale(0.5);
+  margin-bottom: 0;
+
+  line-height: 90%;
+}
+
+#acierto {
+  /* alto minimo 24px */
+ min-height: 24px;
+  /* cambia el tamaño del elemeto a cero */
+ transform: scale(0);
+}
+
+/* IMAGENES */
+picture {
+  position: relative;
+}
+picture img {
+  max-width: 20vh;
+}
+
+/* PALABRA Y ENCUADRE */
+h2.palabra {
+  color: royalblue;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  font-size: 2.5rem;
+
+  margin-bottom: .5rem;
+}
+
+.encuadre {
+  /* borde de 2px color carmesi */
+  border: 2px dashed rgb(243, 24, 68);
+  /* espaciado interno arriba 3px derecha 2px abajo 2px izquierda 6px */
+  padding: .1rem 1rem;
+  border-radius: .7rem;
+}
+
+/* PIZARRA Y TECLADO */
+.hm{
+  height: 22vh;
+}
+
+#pizarra{
+  resize: none;
+  font-size: 3rem;
+  font-weight: normal;
+  border: none;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  background-color: transparent;
+
+  width: var(--ancho-max);
+  text-align: center;
+}
+
+/* TECLADO */
+
+.flex-row {
+  display: flex;
+/*   justify-content: center; /* o flex-start */
+  flex-wrap: wrap;
+  gap:.5rem;
+
+  width: var(--ancho-max);
+  max-width: 500px;
+
+  margin: auto;
+  position: relative;
+
+  justify-content: center;
+}
+
+button.letra{
+  margin: 0;
+  padding: .3rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: .3rem;
+  border: 1px solid black;
+  background-color: #74707050;
+}
+
+.letra:disabled {
+  /* color rojo con opacidad del 50% */
+  color:rgba(28, 69, 206, 0.5);
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap:.3rem;
+
+  align-content: center; /* for los btn letra */
+}
+
+/* BOTONES Y TEXTO PISTA*/
+#tecladoPizarra{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0;
+  position: absolute;
+  top: 70vh;
+  right: 0;
+}
+
+.delcostado{
+  position: relative;
+  height: 2rem;
+}
+
+#hueco-pista{
+  position: absolute;
+  font-size:1rem;
+  top: 2.3rem;
+  left: 0;
+  right: -5rem; /* puede expandirse hasta 10 rem */
+  text-align: start;
+}
+
+/* CLASES PARA AÑADIR ANIMACIONES A LOS MENSAJES */
+.zoom-in {
+  /* cambia tamaño del elemento al tamaño original, tiene adicional de ser importante lo que significa que será prioridad */
+  transform: scale(1) !important;
+}
+
+.acierto {
+  /* ejecuta animacion zoomInOut durante un segundo el cual empieza lento, despues es rapido y al final se ralentiza */
+  animation: zoomInOut 1s ease;
+}
+.rojo {
+  color: rgb(218, 42, 57);
+}
+.verde {
+  color: rgb(22, 240, 149);
+}
+
+/* OCULTO */
+.oculto, .oculto>*{
+  display: none;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>::: juego:::</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/ico" href="img/icono.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Caveat+Brush&family=Caveat:wght@400;600&family=Corben:wght@400;700&family=Gloria+Hallelujah&family=Ms+Madi&family=Oooh+Baby&family=Quattrocento+Sans:ital,wght@0,400;1,700&family=Shrikhand&family=Splash&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="cabecera">
+        <h1 class="titulo"><a href="index.html">Juego del ahorcado</a></h1>
+        <h3>Intentos restantes: <span id="intentos">6</span></h3>
+      </div>
+      
+      <h1 id="msg-final"></h1>
+      <h3 id="acierto"></h3>
+
+      <picture>
+        <img src="img/ahorcado_6.png" id="image">
+      </picture>
+      
+      <div class="flex-row">
+        <h2 class="palabra" id="palabra"></h2>
+      </div>
+        
+      <div class="flex-row">
+        <textarea class="hm oculto" id="pizarra" spellcheck="false" autocomplete="off" autocapitalize="characters" placeholder=":)"></textarea>
+        <div class="hm flex" id="teclado"></div>
+      </div>
+      
+      <button class="oculto" id="tecladoPizarra">Usar pizarra</button>       
+        
+      <div class="flex-row">
+        <div class="cabecera">
+          <button id="inicio">Jugar</button>           
+          <button id="pista" class="oculto">Dame una pista!</button>
+        </div>
+        <div class="delcostado">
+          <p id="hueco-pista"></p>
+        </div>
+      </div>     
+
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
